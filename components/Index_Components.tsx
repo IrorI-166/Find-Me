@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 
 
-export default function index_Header(props: any) {
+export function Index_Header(props: any) {
     const router = useRouter();
     const { t } = useTranslation('common');
     return (
@@ -59,4 +59,8 @@ export default function index_Header(props: any) {
             </Navbar>
         </Layout>
     )
+}
+
+export function Index_Card(prop: any) {
+    
 }

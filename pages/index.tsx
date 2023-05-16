@@ -2,7 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Index_Header from '@/components/Index_Header'
+import { GetStaticProps } from "next";
+import { Index_Header } from '@/components/Index_Components'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: {
+      ...(await serverSideTranslations(locale!, ["common"])),
+  },
+});
 
 const inter = Inter({ subsets: ['latin'] })
 
