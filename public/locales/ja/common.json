@@ -30,9 +30,7 @@
         "agreements": "利用規約とプライバシーポリシー"
     },
     "Header": {
-        "home": "ホーム",
-        "about": "AIBoXについて",
-        "creators": "クリエイター",
+        "top": "トップ",
         "notice": "お知らせ",
         "login": "ログイン",
         "signup": "新規登録",

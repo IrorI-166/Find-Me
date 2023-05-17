@@ -1,4 +1,4 @@
-import { Navbar, Button, Link, Text } from "@nextui-org/react";
+import { Navbar, Button, Link, Text, Grid, Card } from "@nextui-org/react";
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
 import { useRouter } from "next/router";
@@ -15,7 +15,7 @@ export function Index_Header(props: any) {
                     <Link href="/" color={"text"}>
                         <AcmeLogo />
                         <Text b color="inherit" hideIn="xs">
-                            AIBoX
+                            FindMe
                         </Text>
                     </Link>
                 </Navbar.Brand>
@@ -25,23 +25,11 @@ export function Index_Header(props: any) {
                         href="/"
                     >
 
-                        {t('Header.home')}
+                        {t('Header.top')}
                     </Navbar.Link>
                     <Navbar.Link
                         isActive={router.pathname === "/about"}
                         href="/about"
-                    >
-                        {t('Header.about')}
-                    </Navbar.Link>
-                    <Navbar.Link
-                        isActive={router.pathname === "/creators"}
-                        href="/creators"
-                    >
-                        {t('Header.creators')}
-                    </Navbar.Link>
-                    <Navbar.Link
-                        isActive={router.pathname === "/notice"}
-                        href="/notice"
                     >
                         {t('Header.notice')}
                     </Navbar.Link>
@@ -61,6 +49,36 @@ export function Index_Header(props: any) {
     )
 }
 
-export function Index_Card(prop: any) {
-    
+export function Index_Cards(prop: any) {
+    const MockItem = ({ text, url }: { text: string; url: string },) => {
+        return (
+            <Link href={url}>
+                    <Card css={{
+                        $$cardColor: '$colors$primary',
+                        width: "450px",
+                        height: "250px"
+                    }}>
+                        <Card.Body>
+                            <Text h6 size={24} color="white" css={{ mt: 0 }}>
+                                {text}
+                            </Text>
+                        </Card.Body>
+                    </Card>
+            </Link>
+        );
+    };
+
+    return (
+        <Grid.Container gap={3} justify="center">
+            <Grid xs={4}>
+                <MockItem text={"募集情報１"} url="/" />
+            </Grid>
+            <Grid xs={4}>
+                <MockItem text={"募集情報２"} />
+            </Grid>
+            <Grid xs={4}>
+                <MockItem text={"募集情報３"} />
+            </Grid>
+        </Grid.Container>
+    );
 }
