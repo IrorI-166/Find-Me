@@ -1,8 +1,10 @@
-import { Navbar, Button, Link, Text, Grid, Card } from "@nextui-org/react";
-import { Layout } from "./header/Layout";
-import { AcmeLogo } from "./header/AcmeLogo";
+import { Navbar, Button, Link, Text, Grid, Card, Tooltip } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
+import { Layout } from "./header/Layout";
+import { AcmeLogo } from "./header/AcmeLogo";
+import { TooltipContent } from "./card_contents/TooltipContent";
+
 
 
 export function Index_Header(props: any) {
@@ -51,34 +53,56 @@ export function Index_Header(props: any) {
 
 export function Index_Cards(prop: any) {
     const MockItem = ({ text, url }: { text: string; url: string },) => {
+
         return (
             <Link href={url}>
-                    <Card css={{
-                        $$cardColor: '$colors$primary',
-                        width: "450px",
-                        height: "250px"
-                    }}>
-                        <Card.Body>
-                            <Text h6 size={24} color="white" css={{ mt: 0 }}>
-                                {text}
-                            </Text>
-                        </Card.Body>
-                    </Card>
+                <Card css={{
+                    $$cardColor: '$colors$primary',
+                    width: "300px",
+                    height: "200px"
+                }}>
+                    <Card.Body>
+                        <Text h6 size={24} color="white" css={{ mt: 0 }}>
+                            {text}
+                        </Text>
+                    </Card.Body>
+                </Card>
             </Link>
         );
     };
 
     return (
         <Grid.Container gap={3} justify="center">
-            <Grid xs={4}>
-                <MockItem text={"募集情報１"} url="/" />
-            </Grid>
-            <Grid xs={4}>
-                <MockItem text={"募集情報２"} />
-            </Grid>
-            <Grid xs={4}>
-                <MockItem text={"募集情報３"} />
-            </Grid>
+            <Tooltip
+                content={<TooltipContent />}
+                trigger="hover"
+                color="success"
+                hideArrow
+            >
+                <Grid xs={4}>
+                    <MockItem text={"募集情報１"} url="/" />
+                </Grid>
+            </Tooltip>
+            <Tooltip
+                content={<TooltipContent />}
+                trigger="hover"
+                color="success"
+                hideArrow
+            >
+                <Grid xs={4}>
+                    <MockItem text={"募集情報２"} />
+                </Grid>
+            </Tooltip>
+            <Tooltip
+                content={<TooltipContent />}
+                trigger="hover"
+                color="success"
+                hideArrow
+            >
+                <Grid xs={4}>
+                    <MockItem text={"募集情報３"} />
+                </Grid>
+            </Tooltip>
         </Grid.Container>
     );
 }

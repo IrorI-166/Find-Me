@@ -25,12 +25,10 @@ export default function Home() {
       </Head>
       <Index_Header />
       <main className={`${styles.main} ${inter.className}`}>
-
         <div>
           Find-Meへようこそ！
         </div>
         <Index_Cards />
-
       </main>
     </>
   )
