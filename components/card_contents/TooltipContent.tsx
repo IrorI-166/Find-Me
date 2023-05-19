@@ -1,11 +1,11 @@
 import React from "react";
 import { Text } from "@nextui-org/react";
 
-export const TooltipContent = () => {
+export const TooltipContent = ({ title, description }: { title: string, description: string }) => {
     return (
         <>
-            <Text size="$2xl">募集タイトル</Text>
-            <Text size="$xl">募集内容</Text>
+            <Text size="$2xl">{title}</Text>
+            <Text size="$xl">{description}</Text>
         </>
     );
 };
