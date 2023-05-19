@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
-import { TooltipContent } from "./card_contents/TooltipContent";
+import { TT_set } from "@/components/card_contents/TT_set"
 import data from "@/testdata.json"
 
 export function Index_Header(props: any) {
@@ -50,9 +50,6 @@ export function Index_Header(props: any) {
     )
 }
 
-const TTset() {
-    
-}
 export function Index_Cards(prop: any) {
     const MockItem = ({ text, url }: { text: string; url: string },) => {
 
@@ -75,40 +72,21 @@ export function Index_Cards(prop: any) {
 
     return (
         <Grid.Container gap={3} justify="center">
-            <Tooltip
-                content={<TooltipContent title={data.username1.title} description={data.username1.description} />}
-                trigger="hover"
-                color="success"
-                hideArrow
-                css={{
-                    width: "380px",
-                    height: "200px"
-                }}
-            >
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報１"} url="/" />
                 </Grid>
-            </Tooltip>
-            <Tooltip
-                content={<TooltipContent />}
-                trigger="hover"
-                color="success"
-                hideArrow
-            >
+            </TT_set>
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報２"} />
                 </Grid>
-            </Tooltip>
-            <Tooltip
-                content={<TooltipContent />}
-                trigger="hover"
-                color="success"
-                hideArrow
-            >
+            </TT_set>
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報３"} />
                 </Grid>
-            </Tooltip>
+            </TT_set>
         </Grid.Container>
     );
 }
