@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
 import { TT_set } from "@/components/card/TT_set"
+import data from "@/testdata.json";
 
 export function Index_Header(props: any) {
     const router = useRouter();
@@ -51,7 +52,6 @@ export function Index_Header(props: any) {
 
 export function Index_Cards(prop: any) {
     const MockItem = ({ text, url }: { text: string; url: string },) => {
-
         return (
             <Link href={url}>
                 <Card css={{
@@ -73,17 +73,32 @@ export function Index_Cards(prop: any) {
         <Grid.Container gap={3} justify="center">
             <TT_set>
                 <Grid xs={4}>
-                    <MockItem text={"募集情報１"} url="/" />
+                    <MockItem text={data.username1.title} url="/" />
                 </Grid>
             </TT_set>
             <TT_set>
                 <Grid xs={4}>
-                    <MockItem text={"募集情報２"} />
+                    <MockItem text={data.username2.title} />
                 </Grid>
             </TT_set>
             <TT_set>
                 <Grid xs={4}>
-                    <MockItem text={"募集情報３"} />
+                    <MockItem text={data.username2.title} />
+                </Grid>
+            </TT_set>
+            <TT_set>
+                <Grid xs={4}>
+                    <MockItem text={data.username2.title} />
+                </Grid>
+            </TT_set>
+            <TT_set>
+                <Grid xs={4}>
+                    <MockItem text={data.username2.title} />
+                </Grid>
+            </TT_set>
+            <TT_set>
+                <Grid xs={4}>
+                    <MockItem text={data.username2.title} />
                 </Grid>
             </TT_set>
         </Grid.Container>

@@ -3,6 +3,7 @@ import { TooltipContent } from "./TooltipContent";
 import data from "@/testdata.json";
 
 export function TT_set({ children }: {children: React.ReactNode}) {
+
     return (
         <Tooltip
             content={<TooltipContent title={data.username1.title} description={data.username1.description} />}
@@ -13,6 +14,7 @@ export function TT_set({ children }: {children: React.ReactNode}) {
                 width: "380px",
                 height: "200px"
             }}
+            placement="bottomStart"
         >
             {children}
         </ Tooltip>
