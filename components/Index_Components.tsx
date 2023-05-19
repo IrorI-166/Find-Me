@@ -3,9 +3,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
-import { TooltipContent } from "./card_contents/TooltipContent";
-
-
+import { TT_set } from "@/components/card_contents/TT_set"
+import data from "@/testdata.json"
 
 export function Index_Header(props: any) {
     const router = useRouter();
@@ -59,7 +58,7 @@ export function Index_Cards(prop: any) {
                 <Card css={{
                     $$cardColor: '$colors$primary',
                     width: "300px",
-                    height: "200px"
+                    height: "150px"
                 }}>
                     <Card.Body>
                         <Text h6 size={24} color="white" css={{ mt: 0 }}>
@@ -73,36 +72,21 @@ export function Index_Cards(prop: any) {
 
     return (
         <Grid.Container gap={3} justify="center">
-            <Tooltip
-                content={<TooltipContent />}
-                trigger="hover"
-                color="success"
-                hideArrow
-            >
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報１"} url="/" />
                 </Grid>
-            </Tooltip>
-            <Tooltip
-                content={<TooltipContent />}
-                trigger="hover"
-                color="success"
-                hideArrow
-            >
+            </TT_set>
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報２"} />
                 </Grid>
-            </Tooltip>
-            <Tooltip
-                content={<TooltipContent />}
-                trigger="hover"
-                color="success"
-                hideArrow
-            >
+            </TT_set>
+            <TT_set>
                 <Grid xs={4}>
                     <MockItem text={"募集情報３"} />
                 </Grid>
-            </Tooltip>
+            </TT_set>
         </Grid.Container>
     );
 }
