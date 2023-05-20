@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
-import { TT_set } from "@/components/card_contents/TT_set"
+import { TT_set } from "@/components/card/TT_set"
 import data from "@/testdata.json"
 
 export function Index_Header(props: any) {
