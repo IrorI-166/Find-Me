@@ -1,11 +1,11 @@
 import { Tooltip } from "@nextui-org/react";
 import { TooltipContent } from "./TooltipContent";
-import data from "@/testdata.json";
 
-export function TT_set({ children }: {children: React.ReactNode}) {
+export function TT_set({ title, description, children }: { title: string, description: string, children: React.ReactNode }) {
+
     return (
         <Tooltip
-            content={<TooltipContent title={data.username1.title} description={data.username1.description} />}
+            content={<TooltipContent title={title} description={description} />}
             trigger="hover"
             color="success"
             hideArrow
