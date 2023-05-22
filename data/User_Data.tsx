@@ -7,7 +7,7 @@ type user = {
 
 type users = user[];
 
-export const User_Data: users = [
+const User_Data: users = [
     {
         id: 1,
         username: "田中タロウ",
