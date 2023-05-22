@@ -13,7 +13,6 @@ export function TT_set({ title, description, children }: { title: string, descri
                 width: "380px",
                 height: "200px"
             }}
-            placement="bottomStart"
         >
             {children}
         </ Tooltip>

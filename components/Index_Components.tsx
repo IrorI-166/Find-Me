@@ -52,6 +52,7 @@ export function Index_Header(props: any) {
 
 export function Index_Cards(prop: any) {
     const MockItem = ({ text, url }: { text: string; url: string },) => {
+
         return (
             <Link href={url}>
                 <Card css={{
