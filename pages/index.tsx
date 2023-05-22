@@ -1,5 +1,5 @@
+import { Text } from '@nextui-org/react'
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { GetStaticProps } from "next";
@@ -25,8 +25,16 @@ export default function Home() {
       </Head>
       <Index_Header />
       <main className={`${styles.main} ${inter.className}`}>
-        <div>
-          Find-Meへようこそ！
+        <div className={styles.center}>
+          <Text
+            h1
+            size={80}
+            css={{
+              textGradient: "45deg, $yellow600 -20%, $red600 100%",
+            }}
+            weight="bold">
+            Find-Meへようこそ！
+          </Text>
         </div>
         <Index_Cards />
       </main>
