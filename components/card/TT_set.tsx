@@ -1,11 +1,11 @@
 import { Tooltip } from "@nextui-org/react";
 import { TooltipContent } from "./TooltipContent";
+import { Top_Users } from "@/data/User_Data";
 
-export function TT_set({ title, description, children }: { title: string, description: string, children: React.ReactNode }) {
-
+export function TT_set({ index, children }: { index: number, children: React.ReactNode }) {
     return (
         <Tooltip
-            content={<TooltipContent title={title} description={description} />}
+            content={<TooltipContent title={Top_Users[index].title} description={Top_Users[index].description} />}
             trigger="hover"
             color="success"
             hideArrow
@@ -13,7 +13,6 @@ export function TT_set({ title, description, children }: { title: string, descri
                 width: "380px",
                 height: "200px"
             }}
-            placement="bottomStart"
         >
             {children}
         </ Tooltip>

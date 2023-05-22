@@ -39,3 +39,21 @@ export const User_Data: users = [
         description: "pogopogopogopogopogopogopogopogopogopogopogopogopogopogopogopogo"
     }
 ];
+
+function PickTop(array: Array<any>) {
+    const pick: Array<any> = [];
+    const selectedIndices: Set<number> = new Set();
+
+    while (pick.length < 3) {
+        const num = Math.floor(Math.random() * array.length);
+
+        if (!selectedIndices.has(num)) {
+            selectedIndices.add(num);
+            pick.push(array[num]);
+        }
+    }
+
+    return pick;
+};
+
+export const Top_Users = PickTop(User_Data);

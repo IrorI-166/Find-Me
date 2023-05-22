@@ -71,19 +71,19 @@ export function Index_Cards(prop: any) {
 
     return (
         <Grid.Container gap={3} justify="center">
-            <TT_set>
+            <TT_set index={0}>
                 <Grid xs={4}>
-                    <MockItem text={Top_Users[1].title} url="/" />
+                    <MockItem text={Top_Users[0].title} url="/" />
                 </Grid>
             </TT_set>
-            <TT_set>
+            <TT_set index={1}>
+                <Grid xs={4}>
+                    <MockItem text={Top_Users[1].title} />
+                </Grid>
+            </TT_set>
+            <TT_set index={2}>
                 <Grid xs={4}>
                     <MockItem text={Top_Users[2].title} />
-                </Grid>
-            </TT_set>
-            <TT_set>
-                <Grid xs={4}>
-                    <MockItem text={Top_Users[3].title} />
                 </Grid>
             </TT_set>
         </Grid.Container>
