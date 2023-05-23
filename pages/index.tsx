@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { GetStaticProps } from "next";
-import { Index_Header, Index_Cards } from '@/components/Index_Components'
+import { Index_Header, Index_Cards, Index_Search } from '@/components/Index_Components/Index_Components'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
@@ -33,10 +33,20 @@ export default function Home() {
               textGradient: "45deg, $yellow600 -20%, $red600 100%",
             }}
             weight="bold">
-            Find-Meへようこそ！
+            Find-Meへようこそ!
           </Text>
         </div>
-        <Index_Cards />
+        <div>
+          <Text size={22}>
+            Find-MeはあなただけのWebページを作成して、公開できます💫
+          </Text>
+        </div>
+        <div>
+          <Index_Search />
+        </div>
+        <div>
+          <Index_Cards />
+        </div>
       </main>
     </>
   )

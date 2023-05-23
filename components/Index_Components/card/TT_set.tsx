@@ -1,6 +1,6 @@
 import { Tooltip } from "@nextui-org/react";
 import { TooltipContent } from "./TooltipContent";
-import { Top_Users } from "@/data/User_Data";
+import { Top_Users } from "@/data_tables/User_Data";
 
 export function TT_set({ index, children }: { index: number, children: React.ReactNode }) {
     return (

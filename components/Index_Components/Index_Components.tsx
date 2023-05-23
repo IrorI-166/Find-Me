@@ -1,10 +1,12 @@
-import { Navbar, Button, Link, Text, Grid, Card, Tooltip } from "@nextui-org/react";
+import { Navbar, Button, Link, Text, Grid, Card, Input } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useTranslation } from 'next-i18next';
 import { Layout } from "./header/Layout";
 import { AcmeLogo } from "./header/AcmeLogo";
-import { TT_set } from "@/components/card/TT_set"
-import { Top_Users } from "@/data/User_Data";
+import { TT_set } from "@/components/Index_Components/card/TT_set"
+import { Submite_Button } from "./search/Submite_Button";
+import { Top_Users } from "@/data_tables/User_Data";
+import { SearchBox_Placeholder } from "@/data_tables/SearchBox_Placeholder";
 
 export function Index_Header(props: any) {
     const router = useRouter();
@@ -78,14 +80,33 @@ export function Index_Cards(prop: any) {
             </TT_set>
             <TT_set index={1}>
                 <Grid xs={4}>
-                    <MockItem text={Top_Users[1].title} url={Top_Users[1].url}/>
+                    <MockItem text={Top_Users[1].title} url={Top_Users[1].url} />
                 </Grid>
             </TT_set>
             <TT_set index={2}>
                 <Grid xs={4}>
-                    <MockItem text={Top_Users[2].title} url={Top_Users[2].url}/>
+                    <MockItem text={Top_Users[2].title} url={Top_Users[2].url} />
                 </Grid>
             </TT_set>
         </Grid.Container>
     );
+}
+
+export function Index_Search({ }) {
+
+    return (
+        <Input
+            size="xl"
+            bordered
+            placeholder={SearchBox_Placeholder}
+            contentRight={
+                <Submite_Button url="/" />
+            }
+            color="warning"
+            css={{
+                width: "400px"
+            }}
+        >
+        </Input>
+    )
 }
