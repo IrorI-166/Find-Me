@@ -13,7 +13,10 @@ export function Index_Header(props: any) {
     const { t } = useTranslation('common');
     return (
         <Layout>
-            <Navbar isBordered variant="floating">
+            <Navbar
+            shouldHideOnScroll
+            variant="sticky"
+            >
                 <Navbar.Brand>
                     <Link href="/" color={"text"}>
                         <AcmeLogo />

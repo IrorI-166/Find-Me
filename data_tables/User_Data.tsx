@@ -10,7 +10,7 @@ type user = {
 
 type users = user[];
 
-const User_Data: users = [
+export const User_Data: users = [
     {
         id: 1,
         username: "田中タロウ",
